@@ -1,0 +1,671 @@
+/*
+ * CSS do site "André Lanches"
+ */
+@font-face {
+    font-family: viking-style;
+    src: url("fonts/viking/viking.regular.ttf");
+}
+*{
+    box-sizing: border-box;
+}
+/* ----------> Inicio do carrossel <----------  */
+.carrossel-container {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+.carrossel-slide {
+    display: none;
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* ----------> Fim do carrossel <---------- */
+
+#cardapio-titulo{
+    width: 100%;
+    background: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000000;
+}
+/* ----------> Inicio do efeito de girar o card <---------- */
+#section-menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0px 0 10px 0;
+    max-width: 100%;
+}
+
+.wrapper, .single-card{
+    height: 450px;
+    max-width: 300px;
+    margin: 20px 0px 20px 0px;
+    position: relative;
+    
+}
+.wrapper{
+    perspective: 900px;
+}
+.single-card{
+    text-align: center;
+    transition: all 1s cubic-bezier(0.7,-.5,0.3,1.8);
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+.wrapper:hover .single-card{
+    transform: rotateY(180deg);  
+    transform-origin: center;
+}
+.front, .back{
+    width: 300px;
+    position: relative;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border: solid;
+    
+}
+.front img{
+    border-radius: 100px;
+    margin-top: 10px;
+    border: 5px solid red;
+}
+.front{
+    cursor: pointer;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50px;
+    background-size: cover;
+    background: white;
+    background-position: center center;
+    background-image: white;
+}
+.back{
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 450px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.desc-card{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.titulo{
+    color: red;
+    font-size: 20px;
+    padding: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+#descricao span{
+    color: green;
+    font-size: 20px;
+}
+#descricao{
+    padding: 5px;
+}
+#descricao p{
+    text-align: center;
+    padding: 5px;
+}
+.back , .content{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.back , .content p{
+    text-align: center;
+    font-size: 13px;
+    padding: 0px 5px 0px 5px ;
+}
+.back , .content h2{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.back , .content ul li{
+    text-align: left;
+    font-size: 12px;
+}
+.back , .content ul{
+    color: black;
+    margin-bottom: 35x;
+}
+/* ----------> Fim do efeito de girar o card <---------- */
+
+
+/* ----------> Inicio Efeito de pulsar o botão (PEDIR JÁ!)<---------- */
+.butao{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.pulsar-btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 30px;
+    cursor: pointer;
+    animation: pulsar 1.5s infinite; 
+}
+.pulsar-btn:hover{
+    background-color: white;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    font-weight: bold;
+}
+/* Definição da animação de pulsar do botão (PEDIR JÁ!) <---------- */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* ----------> Fim do efeito pulsar botão (PEDIR JÁ!) <---------- */
+
+/* ----------> Inicio Efeito de pulsar o tiludo do produto <---------- */
+.pulsar-titulo {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #f50404;
+    cursor: pointer;
+    animation: pulsar-titulo 1.5s infinite; 
+}
+
+/* Definição da animação de pulsar o titulo dos produtos <----------*/
+@keyframes pulsar-titulo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* ----------> Fim do efeito de pulsar titulo do produto <---------- */
+/* ----------> Seleciona o corpo da página <---------- */
+body {
+    background: rgb(255, 255, 255) url("images/back-card1.png");
+    font-family: Candara, Helvetica, sans-serif;    
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header {
+    background-color: #000000;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+/** Seleciona a div que armazenará os elementos de logo (imagem
+e texto do logo do site) **/
+#logo {
+    width: 100%;   
+    height: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column /*row*/;
+    align-items: center;
+}
+.img__logo{
+    padding: 15px 0 0 0;
+}
+/** Seleciona o elemento com o id "logoImg". No nosso caso, a imagem
+que representa o logo do site**/
+#logoImg {
+    width: 90px;
+    height: 90px;
+}
+
+#tituloLogo {
+    font-family: viking-style;
+    color: #ffffff;
+    line-height: 40px;
+    margin: 0;
+    font-size: 35px;
+}
+
+/** Seleciona a div principal que irá compor o menu da aplicação
+    (div com id = "menu") **/
+#menu {
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    padding: 0px 0 0 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+/** Seleciona a lista ordenada que compõe o menu **/
+.listaMenu {
+    margin-left: -40px;
+}
+
+/** Seleciona todos os elementos de lista do item com a classe
+    "listaMenu" **/
+.listaMenu li {
+    display: inline-block;
+}
+
+/** Seleciona todos os links dentro de listas que estão dentro de
+elementos com a classe "listaMenu" **/
+.listaMenu li a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 50px;
+    
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+    color: rgb(252, 252, 252);
+}
+.listaMenu li a:hover{   
+    background-color: white;
+    color: black;
+}
+/** Seleciona elementos de link dentro de listas com a calsse
+"listaMenu" quando estão em estado normal e quando estão
+já visitados **/
+.link-animation:hover{
+    animation: tada;
+    animation-duration: 1s;
+}
+
+/** Seleciona os elementos com o id "menuAtual" quando em estado
+normal e já visitados **/
+#menuAtual:link,
+#menuAtual:visited {
+
+    /** Utilizamos o item abaixo para deixar o texto em letra
+    maiúscula **/
+    text-transform: uppercase;
+
+    /** Deixa a fonte em negrito **/
+    font-weight: bold;
+}
+
+/** Selecionamos a div principal, que irá armazenar todo o conteúdo
+principal do site **/
+#content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /** Definindo um tamanho arbitrário para a div principal.
+    Neste caso, 700px. **/
+    width: 80%;
+    /** Definimos a cor branca para a div principal **/
+    background: rgb(255, 255, 255) ;
+
+    /** Usando o tipo de posicionamento junto ao left e ao margin
+    -left para centralizar a div principal horizontalmente na página **/
+    position: relative;
+    height: auto;
+    
+}
+
+/* ----------> inicio  pagina sobre <---------- */
+#sobre{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.pag-sobre{
+    background: url("images/back-card1.png") white;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#titulo-sobre{
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0 0 0;
+    border-bottom:1px solid;
+}
+.animation-tittle{
+    animation: slideInLeft;
+    animation-duration: 1s;
+}
+.animation-tittle-equipe{
+    animation: slideInDown;
+    animation-duration: 1s;
+}
+#texto{
+    padding: 0px 30px 0 30px;
+    text-align: justify;
+    font-weight: bold;
+    max-width:70%;
+}
+#titulo-sobre {
+    margin: 15px;
+}
+/* ----------> inicio cards-sliders pagina sobre <----------*/
+.swiper-wrapper{
+    width: 80%;
+    
+}
+
+.cards__equipes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 50px;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+.card-equipe{
+    width: 20em;
+    height: 90%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgba(0,0,0,.2);
+    padding: 2em;
+    margin: 0 2em;
+    border: solid;
+}
+.card__image{
+    width: 10em;
+    height: 10em;
+    border-radius: 50% ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 2em;
+    border: 5px solid red;
+    border-radius: 50%;
+}
+
+.card__content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.card__tittle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    top: .2em;
+}
+.card__name{
+    margin: .3em 0;
+    font-weight: 50;
+}
+.card__text{
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+/* ----------> fim cards-sliders pagina sobre <---------- */
+/* ----------> fim paginina sobre <---------- */
+
+/* Inicio pagina contato */
+.container-contato{
+    width: 90%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-contato .titulo__contato{
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: slideInLeft;
+    animation-duration: 1s;
+}
+.container-contato p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.formularioContato { 
+    max-width:600px; 
+    height:auto; 
+    float:none; 
+    margin:auto; 
+    padding:1em; 
+    margin-bottom:1em; 
+    border-radius:10px; 
+    background:#fff; 
+    border: 1px solid;
+    position:relative; 
+}
+.formularioContato:before { 
+    width:0; 
+    height:0; 
+    content:""; 
+    position:absolute; 
+    left:6%; 
+    top:-4.5%; 
+    margin-top:-4px; 
+    margin-left:6px; 
+    z-index:2;
+}
+.formularioContato label  { 
+    float:left; 
+    width:100%; 
+    margin-bottom:1.2em; 
+}
+.formularioContato label span {
+    width: 100%;
+    float: left;
+    color: #000000;
+    margin-bottom: 6px;
+    font-family:'open_sansregular'; 
+}
+.formularioContato input,textarea{
+    width: 100%;
+} 
+.formularioContato label input  { 
+    font-size:1em; 
+    color:#555; 
+    font-family:'open_sansregular'; 
+    outline:none; 
+    border:1px #464646 solid; 
+    border-radius:4px; 
+    padding:0.6em; 
+    transition: 0.3s;  
+}
+.formularioContato label select { 
+    font-size:1em; 
+    color:#555; 
+    border:1px #dee5ed solid; 
+    border-radius:4px; 
+    padding:0.6em; 
+    outline:none; 
+    transition: 0.3s;  
+}
+.formularioContato textarea{
+    resize: none;
+}
+.formularioContato label textarea { 
+    font-size:1em; 
+    color:#555; 
+    border:1px #464646 solid; 
+    border-radius:4px; 
+    padding:0.6em; 
+    outline:none;
+    transition: 0.3s;   
+}
+.formularioContato label input:focus    { box-shadow:0 0 5px 0px rgb(0, 0, 0); border:1px rgb(0, 0, 0) solid; color:rgb(0, 0, 0);}
+.formularioContato label select:focus   { box-shadow:0 0 5px 0px rgb(0, 0, 0); border:1px rgb(0, 0, 0) solid; }
+.formularioContato label textarea:focus { box-shadow:0 0 5px 0px rgb(0, 0, 0); border:1px rgb(0, 0, 0) solid; color:rgb(0, 0, 0);}
+.formularioContato button.btn-envia { 
+    background-color:rgb(0, 0, 0); 
+    width:100%; display:block; 
+    margin:auto; cursor:pointer; 
+    border-radius:4px;  
+    border:0; 
+    padding:0.8em 0em; 
+    color:#fff; 
+    font-size:1.3em; 
+    font-family:'open_sansbold'; 
+    text-align: center;
+    transition: 0.3s;   
+}
+.formularioContato button.btn-envia:hover { 
+    background-color:#333; 
+}
+
+.endereco__contato{
+    width: 100%;
+    padding: 30px;
+    height: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+.titulo__endereco h2{
+    font-size: 23px;
+    border-bottom: 1px solid black;
+    padding: 20px;
+}
+.titulo__endereco{
+    animation: slideInRight;
+    animation-duration: 1s;
+}
+.endereco p{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 0 30px 0 30px;
+}
+.endereco{
+    width: 100%;
+
+}
+.google__maps{
+    width: 100%;
+    max-width: 80%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.google__maps iframe{
+    width: 100%;
+    height: 450px;
+}
+/* ----------> Fim pagina contato <---------- */
+
+/* ----------> Inicio imagem fixa de telefone <---------- */
+
+.telefone__container{
+    z-index: 200;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+}
+.telefone__container:hover{
+    animation: tada;
+    animation-duration: 1.5s;
+}
+.content__img img{
+    width: 75px;
+    height: 75px;
+}
+.content__img img:hover{
+    width: 100px;
+    height: 100px;
+    bottom: -45px;
+    right: -45px;
+}
+/* ----------> Fim imagem fixa de telefone <---------- */
+
+/* ----------> Incio footer <---------- */
+.footer__container{
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__p{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+/* ----------> fim footer <---------- */
